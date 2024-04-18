@@ -1,0 +1,12 @@
+public int firstUniqeValue(int[] A) {
+        int result = -1;
+        Set<Integer> mySet = new LinkedHashSet<>();
+        Set<Integer> duplicate = new LinkedHashSet<>();
+        for (Integer a : A) {
+            if (!mySet.add(a))
+                duplicate.add(a);
+        }
+        mySet.removeAll(duplicate);
+        return mySet.isEmpty() ? -1 : mySet.iterator().next();
+
+    }
