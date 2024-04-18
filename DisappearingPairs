@@ -1,1 +1,16 @@
+public String DisappearingPairs(String S) {
+        StringBuffer result = new StringBuffer(S);
+        boolean changed = false;
+        do {
+            changed = false;
 
+            for (int i = 0; i < result.length() - 1; i++) {
+                if (result.charAt(i) == result.charAt(i + 1)) {
+                    result.deleteCharAt(i);
+                    result.deleteCharAt(i);
+                    changed = true;
+                }
+            }
+        } while (changed);
+        return result.toString();
+    }
