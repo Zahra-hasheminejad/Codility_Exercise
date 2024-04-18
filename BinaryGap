@@ -1,0 +1,27 @@
+public int binaryGap(int N) {
+        String binaryStr=Integer.toBinaryString(N);
+        StringBuffer binaryStrBuf=new StringBuffer(binaryStr);
+        int count=0;
+        int maxResult=0;
+        int firstOneIndex=-1;
+        firstOneIndex= binaryStrBuf.indexOf("1");
+        if(firstOneIndex!=-1)
+        {
+            for(int i=firstOneIndex+1;i<binaryStrBuf.length();i++)
+            {
+                if(binaryStrBuf.charAt(i)=='0')
+                {
+                    count++;
+                }
+                else if(binaryStrBuf.charAt(i)=='1')
+                {
+                  if(count>maxResult) {
+                      maxResult = count;
+                      count = 0;
+                  }else
+                      count=0;
+                }
+            }
+        }
+        return maxResult;
+    }
