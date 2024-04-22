@@ -1,4 +1,6 @@
-public int binaryGap(int N) {
+public class main{
+
+    public int binaryGap(int N) {
         String binaryStr=Integer.toBinaryString(N);
         StringBuffer binaryStrBuf=new StringBuffer(binaryStr);
         int count=0;
@@ -15,13 +17,14 @@ public int binaryGap(int N) {
                 }
                 else if(binaryStrBuf.charAt(i)=='1')
                 {
-                  if(count>maxResult) {
-                      maxResult = count;
-                      count = 0;
-                  }else
-                      count=0;
+                    if(count>maxResult) {
+                        maxResult = count;
+                        count = 0;
+                    }else
+                        count=0;
                 }
             }
         }
         return maxResult;
     }
+}
