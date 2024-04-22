@@ -1,15 +1,17 @@
-public int[] CyclicRotation(int[] A, int K){
-        int len=A.length;
-        int[] temp=new int[len];
-        if(len==0 || K==0)
+public class main {
+    public int[] CyclicRotation(int[] A, int K) {
+        int len = A.length;
+        int[] temp = new int[len];
+        if (len == 0 || K == 0)
             return A;
-        else if (K>len)
-            K=K%len;
-        for (int i=0;i<K;i++){
-            temp[i]=A[len-K+i];
+        else if (K > len)
+            K = K % len;
+        for (int i = 0; i < K; i++) {
+            temp[i] = A[len - K + i];
         }
-        for (int i=K;i<len;i++){
-            temp[i]=A[i-K];
+        for (int i = K; i < len; i++) {
+            temp[i] = A[i - K];
         }
         return temp;
     }
+}
